@@ -45,7 +45,13 @@ app.get("/api/products/search", (req, res) => {
   res.send("使用 ID 作為搜尋條件來搜尋產品");
 });
 
+app.get("/api/products/status", (req, res) => {
+  res.send("檢查產品上下架狀態");
+});
 
+app.get("/api/products/:id/", (req, res) => {
+  res.send(`獲取特定 ID 的產品 ${req.params.id}`);
+});
 
 app.get("/api/products/:id/", (req, res) => {
   res.send(`獲取特定 ID 的產品 ${req.params.id}`);
